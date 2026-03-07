@@ -41,3 +41,31 @@ Equal Experts
 __________________________________________
 [^1]: For example Go, Python or Ruby but not Bash or Powershell.  
 [^2]: https://docs.github.com/en/rest/gists/gists?apiVersion=2022-11-28
+
+
+#######################################################################
+# Gist Lookup API
+
+Simple API that returns public GitHub Gists for a given username.
+
+## Endpoints
+- `GET /{username}` → list of public gists (e.g. `/octocat`)
+
+## Run locally
+```bash
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
+uvicorn src.main:app --reload --port 8080
+
+##After Done
+deactivate
+
+#For Test run go to the Root Dir.
+python -m pytest -v
+
+
+############### Note #################
+Press Cmd + Shift + P
+Type and select Python: Select Interpreter.
